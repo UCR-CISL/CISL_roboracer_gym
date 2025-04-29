@@ -13,7 +13,7 @@ Creating cisl_roboracer_gym_sim_1 ... done
 
 3. Excecute the container in an interactive terminal,
 ```bash
-docker exec -it <container-id> bash
+docker exec -it cisl_roboracer_gym-sim-1 bash
 ```
 4. Start the simulator
 ```bash
