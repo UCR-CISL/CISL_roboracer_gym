@@ -26,7 +26,7 @@ ros2 launch f1tenth_rl rl_agent_launch.py training_mode:=true model_type:=dqn
 
 ## Troubleshooting
 
-If you get the following error, simply run the build command again.
+1. If you get the following error, simply run the build command again.
 ```bash
 --------------------
   46 |     COPY . /sim_ws/src/f1tenth_gym_ros
@@ -39,4 +39,7 @@ If you get the following error, simply run the build command again.
 --------------------
 ERROR: failed to solve: process "/bin/bash -c source /opt/ros/foxy/setup.bash &&     cd sim_ws/ &&     apt-get update --fix-missing &&     rosdep install -i --from-path src --rosdistro foxy -y &&     colcon build" did not complete successfully: exit code: 1
 ERROR: Service 'sim' failed to build : Build failed
+```
+2. If error, Open docker desktop and go to Settings → Resources → File Sharing. Add /tmp to the virtual file share
+```bash
 ```
