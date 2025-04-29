@@ -2,9 +2,9 @@
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
   <name>f1tenth_rl</name>
-  <version>0.1.0</version>
+  <version>0.2.0</version>
   <description>ROS2 package for reinforcement learning with F1TENTH simulator</description>
-  <maintainer email="your_email@example.com">Your Name</maintainer>
+  <maintainer email="maintainer@f1tenth.org">F1TENTH Team</maintainer>
   <license>MIT</license>
 
   <depend>rclpy</depend>
@@ -14,7 +14,6 @@
   <depend>sensor_msgs</depend>
   <depend>nav_msgs</depend>
   <depend>tf2_ros</depend>
-  <depend>tf_transformations</depend>
   
   <exec_depend>ros2launch</exec_depend>
 

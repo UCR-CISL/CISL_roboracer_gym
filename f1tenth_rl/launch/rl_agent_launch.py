@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 from launch import LaunchDescription
 from launch_ros.actions import Node
 from launch.actions import DeclareLaunchArgument
@@ -6,6 +7,8 @@ from ament_index_python.packages import get_package_share_directory
 import os
 
 def generate_launch_description():
+    """Generate launch description for RL agent"""
+    
     # Path to the parameter file
     config_file = os.path.join(
         get_package_share_directory('f1tenth_rl'),
@@ -13,7 +16,7 @@ def generate_launch_description():
         'agent_params.yaml'
     )
     
-    # Launch arguments
+    # Launch arguments with defaults
     training_mode_arg = DeclareLaunchArgument(
         'training_mode',
         default_value='true',
@@ -38,14 +41,15 @@ def generate_launch_description():
         description='Directory to save trained models'
     )
     
-    # RL agent node
+    # Launch the RL agent node
     rl_agent_node = Node(
         package='f1tenth_rl',
         executable='rl_agent',
         name='rl_agent',
         parameters=[
-            config_file,
+            config_file,  # Load base parameters from YAML file
             {
+                # Override with launch arguments
                 'training_mode': LaunchConfiguration('training_mode'),
                 'model_type': LaunchConfiguration('model_type'),
                 'model_path': LaunchConfiguration('model_path'),
@@ -56,9 +60,12 @@ def generate_launch_description():
     )
     
     return LaunchDescription([
+        # Launch arguments
         training_mode_arg,
         model_type_arg,
         model_path_arg,
         save_path_arg,
+        
+        # Nodes
         rl_agent_node
     ])

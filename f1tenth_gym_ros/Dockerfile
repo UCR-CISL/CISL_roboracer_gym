@@ -34,7 +34,7 @@ RUN apt-get update --fix-missing && \
                        tmux \
                        ros-foxy-rviz2
 RUN apt-get -y dist-upgrade
-RUN pip3 install transforms3d
+RUN pip3 install transforms3d torch numpy matplotlib
 
 # f1tenth gym
 RUN git clone https://github.com/f1tenth/f1tenth_gym
@@ -49,8 +49,6 @@ RUN source /opt/ros/foxy/setup.bash && \
     apt-get update --fix-missing && \
     rosdep install -i --from-path src --rosdistro foxy -y && \
     colcon build
-
-RUN pip install torch numpy matplotlib
 
 WORKDIR '/sim_ws'
 ENTRYPOINT ["/bin/bash"]
