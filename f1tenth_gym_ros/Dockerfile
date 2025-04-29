@@ -50,5 +50,7 @@ RUN source /opt/ros/foxy/setup.bash && \
     rosdep install -i --from-path src --rosdistro foxy -y && \
     colcon build
 
+RUN pip install torch numpy matplotlib
+
 WORKDIR '/sim_ws'
 ENTRYPOINT ["/bin/bash"]
