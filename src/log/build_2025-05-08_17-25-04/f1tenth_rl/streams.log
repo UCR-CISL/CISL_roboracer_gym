@@ -1,0 +1,23 @@
+[0.209s] Invoking command in '/sim_ws/src/f1tenth_rl': PYTHONPATH=/sim_ws/src/build/f1tenth_rl/prefix_override:/sim_ws/src/install/f1tenth_rl/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../build/f1tenth_rl build --build-base /sim_ws/src/build/f1tenth_rl/build install --record /sim_ws/src/build/f1tenth_rl/install.log --install-scripts $base/lib/f1tenth_rl --single-version-externally-managed
+[0.272s] running egg_info
+[0.272s] writing ../build/f1tenth_rl/f1tenth_rl.egg-info/PKG-INFO
+[0.272s] writing dependency_links to ../build/f1tenth_rl/f1tenth_rl.egg-info/dependency_links.txt
+[0.272s] writing entry points to ../build/f1tenth_rl/f1tenth_rl.egg-info/entry_points.txt
+[0.272s] writing requirements to ../build/f1tenth_rl/f1tenth_rl.egg-info/requires.txt
+[0.272s] writing top-level names to ../build/f1tenth_rl/f1tenth_rl.egg-info/top_level.txt
+[0.285s] reading manifest file '../build/f1tenth_rl/f1tenth_rl.egg-info/SOURCES.txt'
+[0.285s] writing manifest file '../build/f1tenth_rl/f1tenth_rl.egg-info/SOURCES.txt'
+[0.285s] running build
+[0.285s] running build_py
+[0.286s] running install
+[0.286s] running install_lib
+[0.286s] running install_data
+[0.287s] running install_egg_info
+[0.287s] removing '/sim_ws/src/install/f1tenth_rl/lib/python3.8/site-packages/f1tenth_rl-0.1.0-py3.8.egg-info' (and everything under it)
+[0.287s] Copying ../build/f1tenth_rl/f1tenth_rl.egg-info to /sim_ws/src/install/f1tenth_rl/lib/python3.8/site-packages/f1tenth_rl-0.1.0-py3.8.egg-info
+[0.288s] running install_scripts
+[0.294s] Installing eval_rl_agent script to /sim_ws/src/install/f1tenth_rl/lib/f1tenth_rl
+[0.294s] Installing rl_agent script to /sim_ws/src/install/f1tenth_rl/lib/f1tenth_rl
+[0.294s] Installing train_rl_agent script to /sim_ws/src/install/f1tenth_rl/lib/f1tenth_rl
+[0.295s] writing list of installed files to '/sim_ws/src/build/f1tenth_rl/install.log'
+[0.302s] Invoked command in '/sim_ws/src/f1tenth_rl' returned '0': PYTHONPATH=/sim_ws/src/build/f1tenth_rl/prefix_override:/sim_ws/src/install/f1tenth_rl/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../build/f1tenth_rl build --build-base /sim_ws/src/build/f1tenth_rl/build install --record /sim_ws/src/build/f1tenth_rl/install.log --install-scripts $base/lib/f1tenth_rl --single-version-externally-managed

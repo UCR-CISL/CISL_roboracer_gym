@@ -1,0 +1,10 @@
+Metadata-Version: 1.2
+Name: f1tenth-rl
+Version: 0.1.0
+Summary: ROS2 package for reinforcement learning with F1TENTH simulator
+Home-page: UNKNOWN
+Maintainer: Your Name
+Maintainer-email: your_email@example.com
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN

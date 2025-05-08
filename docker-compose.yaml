@@ -1,0 +1,21 @@
+version: '3'
+services:
+  sim:
+    image: f1tenth_gym_ros
+    build: ./src/f1tenth_gym_ros/
+    privileged: true  # Added privileged mode here
+    volumes:
+      - ./src:/sim_ws/src/
+      - /tmp/.X11-unix:/tmp/.X11-unix
+    environment:
+      - DISPLAY=$DISPLAY
+    network_mode: "host"
+    stdin_open: true
+    tty: true
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
