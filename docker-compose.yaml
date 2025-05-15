@@ -6,10 +6,9 @@ services:
       - ./f1tenth_gym_ros:/sim_ws/src/f1tenth_gym_ros
       - /tmp/.X11-unix:/tmp/.X11-unix
       - ./f1tenth_rl:/sim_ws/src/f1tenth_rl
-      - ./src:/sim_ws/src/
+      - ./ground_truth:/sim_ws/src/ground_truth
     environment:
       - DISPLAY=$DISPLAY
-    user: "${UID}:${GID}"
     network_mode: "host"
     stdin_open: true
     tty: true
