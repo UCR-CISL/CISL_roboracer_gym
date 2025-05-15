@@ -23,14 +23,12 @@ source install/local_setup.bash
 ros2 launch f1tenth_gym_ros gym_bridge_launch.py
 ```
 
-5. Start the training node
+5. Running the ground truth model
 ```bash
 source /opt/ros/foxy/setup.bash
 source install/local_setup.bash
-ros2 launch f1tenth_rl rl_agent_launch.py training_mode:=true model_type:=dqn
+ros2 launch ground_truth wall_follower_launch.py
 ```
-
-
 
 # Troubleshooting
 
