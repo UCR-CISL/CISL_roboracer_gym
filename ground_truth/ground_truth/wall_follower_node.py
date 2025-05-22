@@ -59,7 +59,7 @@ class FarthestPointNavigator(Node):
         
         self.drive_pub = self.create_publisher(
             AckermannDriveStamped,
-            '/drive',
+            '/expert_drive',
             10)
         
         self.get_logger().info('Farthest point navigator initialized')
@@ -83,7 +83,7 @@ class FarthestPointNavigator(Node):
                 self.handle_invalid_scan("Empty scan")
                 return
             
-            # Safety check first
+            # Safety check first. If there is an error, exit out of this function and excecute the avoidance alg
             if self.safety_check(scan_msg):
                 return
                 
@@ -107,6 +107,9 @@ class FarthestPointNavigator(Node):
             
             # Calculate adaptive speed
             adaptive_speed = self.adaptive_speed(steering_angle, max_distance)
+
+            # Telemetry
+            # self.get_logger().info("testy")
             
             # Publish drive command
             self.publish_drive_command(steering_angle, adaptive_speed)
@@ -310,6 +313,7 @@ class FarthestPointNavigator(Node):
         drive_msg.drive.steering_angle = steering_angle
         drive_msg.drive.speed = speed
         self.drive_pub.publish(drive_msg)
+
 
 def main(args=None):
     rclpy.init(args=args)

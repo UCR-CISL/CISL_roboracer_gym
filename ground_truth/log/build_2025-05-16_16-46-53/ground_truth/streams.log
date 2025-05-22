@@ -1,0 +1,45 @@
+[0.279s] Invoking command in '/sim_ws/src/ground_truth': PYTHONPATH=/sim_ws/src/ground_truth/build/ground_truth/prefix_override:/sim_ws/src/ground_truth/install/ground_truth/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base build/ground_truth build --build-base /sim_ws/src/ground_truth/build/ground_truth/build install --record /sim_ws/src/ground_truth/build/ground_truth/install.log --install-scripts $base/lib/ground_truth --single-version-externally-managed
+[0.359s] running egg_info
+[0.359s] creating build/ground_truth/ground_truth.egg-info
+[0.360s] writing build/ground_truth/ground_truth.egg-info/PKG-INFO
+[0.360s] writing dependency_links to build/ground_truth/ground_truth.egg-info/dependency_links.txt
+[0.360s] writing entry points to build/ground_truth/ground_truth.egg-info/entry_points.txt
+[0.360s] writing requirements to build/ground_truth/ground_truth.egg-info/requires.txt
+[0.360s] writing top-level names to build/ground_truth/ground_truth.egg-info/top_level.txt
+[0.361s] writing manifest file 'build/ground_truth/ground_truth.egg-info/SOURCES.txt'
+[0.376s] reading manifest file 'build/ground_truth/ground_truth.egg-info/SOURCES.txt'
+[0.377s] writing manifest file 'build/ground_truth/ground_truth.egg-info/SOURCES.txt'
+[0.377s] running build
+[0.377s] running build_py
+[0.377s] creating /sim_ws/src/ground_truth/build/ground_truth/build
+[0.377s] creating /sim_ws/src/ground_truth/build/ground_truth/build/lib
+[0.377s] creating /sim_ws/src/ground_truth/build/ground_truth/build/lib/ground_truth
+[0.377s] copying ground_truth/learner_node.py -> /sim_ws/src/ground_truth/build/ground_truth/build/lib/ground_truth
+[0.377s] copying ground_truth/wall_follower_node.py -> /sim_ws/src/ground_truth/build/ground_truth/build/lib/ground_truth
+[0.377s] copying ground_truth/__init__.py -> /sim_ws/src/ground_truth/build/ground_truth/build/lib/ground_truth
+[0.377s] running install
+[0.377s] running install_lib
+[0.378s] creating /sim_ws/src/ground_truth/install/ground_truth/lib/python3.8/site-packages/ground_truth
+[0.378s] copying /sim_ws/src/ground_truth/build/ground_truth/build/lib/ground_truth/learner_node.py -> /sim_ws/src/ground_truth/install/ground_truth/lib/python3.8/site-packages/ground_truth
+[0.378s] copying /sim_ws/src/ground_truth/build/ground_truth/build/lib/ground_truth/wall_follower_node.py -> /sim_ws/src/ground_truth/install/ground_truth/lib/python3.8/site-packages/ground_truth
+[0.378s] copying /sim_ws/src/ground_truth/build/ground_truth/build/lib/ground_truth/__init__.py -> /sim_ws/src/ground_truth/install/ground_truth/lib/python3.8/site-packages/ground_truth
+[0.378s] byte-compiling /sim_ws/src/ground_truth/install/ground_truth/lib/python3.8/site-packages/ground_truth/learner_node.py to learner_node.cpython-38.pyc
+[0.379s] byte-compiling /sim_ws/src/ground_truth/install/ground_truth/lib/python3.8/site-packages/ground_truth/wall_follower_node.py to wall_follower_node.cpython-38.pyc
+[0.380s] byte-compiling /sim_ws/src/ground_truth/install/ground_truth/lib/python3.8/site-packages/ground_truth/__init__.py to __init__.cpython-38.pyc
+[0.380s] running install_data
+[0.380s] creating /sim_ws/src/ground_truth/install/ground_truth/share/ament_index
+[0.380s] creating /sim_ws/src/ground_truth/install/ground_truth/share/ament_index/resource_index
+[0.380s] creating /sim_ws/src/ground_truth/install/ground_truth/share/ament_index/resource_index/packages
+[0.381s] copying resource/ground_truth -> /sim_ws/src/ground_truth/install/ground_truth/share/ament_index/resource_index/packages
+[0.381s] copying package.xml -> /sim_ws/src/ground_truth/install/ground_truth/share/ground_truth
+[0.381s] creating /sim_ws/src/ground_truth/install/ground_truth/share/ground_truth/launch
+[0.381s] copying launch/wall_follower_launch.py -> /sim_ws/src/ground_truth/install/ground_truth/share/ground_truth/launch
+[0.381s] copying launch/launch_learner_node.py -> /sim_ws/src/ground_truth/install/ground_truth/share/ground_truth/launch
+[0.381s] running install_egg_info
+[0.382s] Copying build/ground_truth/ground_truth.egg-info to /sim_ws/src/ground_truth/install/ground_truth/lib/python3.8/site-packages/ground_truth-0.0.0-py3.8.egg-info
+[0.382s] running install_scripts
+[0.392s] Installing ground_truth_node script to /sim_ws/src/ground_truth/install/ground_truth/lib/ground_truth
+[0.392s] Installing learner_node script to /sim_ws/src/ground_truth/install/ground_truth/lib/ground_truth
+[0.392s] Installing wall_follower script to /sim_ws/src/ground_truth/install/ground_truth/lib/ground_truth
+[0.392s] writing list of installed files to '/sim_ws/src/ground_truth/build/ground_truth/install.log'
+[0.406s] Invoked command in '/sim_ws/src/ground_truth' returned '0': PYTHONPATH=/sim_ws/src/ground_truth/build/ground_truth/prefix_override:/sim_ws/src/ground_truth/install/ground_truth/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base build/ground_truth build --build-base /sim_ws/src/ground_truth/build/ground_truth/build install --record /sim_ws/src/ground_truth/build/ground_truth/install.log --install-scripts $base/lib/ground_truth --single-version-externally-managed

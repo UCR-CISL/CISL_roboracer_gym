@@ -13,7 +13,7 @@ Creating cisl_roboracer_gym_sim_1 ... done
 
 3. Excecute the container in an interactive terminal,
 ```bash
-docker exec -it cisl_roboracer_gym-sim-1 bash
+docker exec -it cisl_roboracer_gym_sim_1 bash
 ```
 4. Start the simulator
 ```bash
@@ -28,6 +28,16 @@ ros2 launch f1tenth_gym_ros gym_bridge_launch.py
 source /opt/ros/foxy/setup.bash
 source install/local_setup.bash
 ros2 launch ground_truth wall_follower_launch.py
+```
+6. Run training (needs work)
+```bash
+ros2 run ground_truth train
+```
+7. Run inference
+```bash
+ros2 run ground_truth inference
+
+
 ```
 
 # Troubleshooting
