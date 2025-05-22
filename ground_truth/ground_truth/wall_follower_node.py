@@ -59,7 +59,7 @@ class FarthestPointNavigator(Node):
         
         self.drive_pub = self.create_publisher(
             AckermannDriveStamped,
-            '/drive',
+            '/expert_drive',
             10)
         
         self.get_logger().info('Farthest point navigator initialized')
@@ -313,6 +313,7 @@ class FarthestPointNavigator(Node):
         drive_msg.drive.steering_angle = steering_angle
         drive_msg.drive.speed = speed
         self.drive_pub.publish(drive_msg)
+
 
 def main(args=None):
     rclpy.init(args=args)

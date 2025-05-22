@@ -1,0 +1,43 @@
+running egg_info
+creating build/ground_truth/ground_truth.egg-info
+writing build/ground_truth/ground_truth.egg-info/PKG-INFO
+writing dependency_links to build/ground_truth/ground_truth.egg-info/dependency_links.txt
+writing entry points to build/ground_truth/ground_truth.egg-info/entry_points.txt
+writing requirements to build/ground_truth/ground_truth.egg-info/requires.txt
+writing top-level names to build/ground_truth/ground_truth.egg-info/top_level.txt
+writing manifest file 'build/ground_truth/ground_truth.egg-info/SOURCES.txt'
+reading manifest file 'build/ground_truth/ground_truth.egg-info/SOURCES.txt'
+writing manifest file 'build/ground_truth/ground_truth.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /sim_ws/src/ground_truth/build/ground_truth/build
+creating /sim_ws/src/ground_truth/build/ground_truth/build/lib
+creating /sim_ws/src/ground_truth/build/ground_truth/build/lib/ground_truth
+copying ground_truth/learner_node.py -> /sim_ws/src/ground_truth/build/ground_truth/build/lib/ground_truth
+copying ground_truth/wall_follower_node.py -> /sim_ws/src/ground_truth/build/ground_truth/build/lib/ground_truth
+copying ground_truth/__init__.py -> /sim_ws/src/ground_truth/build/ground_truth/build/lib/ground_truth
+running install
+running install_lib
+creating /sim_ws/src/ground_truth/install/ground_truth/lib/python3.8/site-packages/ground_truth
+copying /sim_ws/src/ground_truth/build/ground_truth/build/lib/ground_truth/learner_node.py -> /sim_ws/src/ground_truth/install/ground_truth/lib/python3.8/site-packages/ground_truth
+copying /sim_ws/src/ground_truth/build/ground_truth/build/lib/ground_truth/wall_follower_node.py -> /sim_ws/src/ground_truth/install/ground_truth/lib/python3.8/site-packages/ground_truth
+copying /sim_ws/src/ground_truth/build/ground_truth/build/lib/ground_truth/__init__.py -> /sim_ws/src/ground_truth/install/ground_truth/lib/python3.8/site-packages/ground_truth
+byte-compiling /sim_ws/src/ground_truth/install/ground_truth/lib/python3.8/site-packages/ground_truth/learner_node.py to learner_node.cpython-38.pyc
+byte-compiling /sim_ws/src/ground_truth/install/ground_truth/lib/python3.8/site-packages/ground_truth/wall_follower_node.py to wall_follower_node.cpython-38.pyc
+byte-compiling /sim_ws/src/ground_truth/install/ground_truth/lib/python3.8/site-packages/ground_truth/__init__.py to __init__.cpython-38.pyc
+running install_data
+creating /sim_ws/src/ground_truth/install/ground_truth/share/ament_index
+creating /sim_ws/src/ground_truth/install/ground_truth/share/ament_index/resource_index
+creating /sim_ws/src/ground_truth/install/ground_truth/share/ament_index/resource_index/packages
+copying resource/ground_truth -> /sim_ws/src/ground_truth/install/ground_truth/share/ament_index/resource_index/packages
+copying package.xml -> /sim_ws/src/ground_truth/install/ground_truth/share/ground_truth
+creating /sim_ws/src/ground_truth/install/ground_truth/share/ground_truth/launch
+copying launch/wall_follower_launch.py -> /sim_ws/src/ground_truth/install/ground_truth/share/ground_truth/launch
+copying launch/launch_learner_node.py -> /sim_ws/src/ground_truth/install/ground_truth/share/ground_truth/launch
+running install_egg_info
+Copying build/ground_truth/ground_truth.egg-info to /sim_ws/src/ground_truth/install/ground_truth/lib/python3.8/site-packages/ground_truth-0.0.0-py3.8.egg-info
+running install_scripts
+Installing ground_truth_node script to /sim_ws/src/ground_truth/install/ground_truth/lib/ground_truth
+Installing learner_node script to /sim_ws/src/ground_truth/install/ground_truth/lib/ground_truth
+Installing wall_follower script to /sim_ws/src/ground_truth/install/ground_truth/lib/ground_truth
+writing list of installed files to '/sim_ws/src/ground_truth/build/ground_truth/install.log'
