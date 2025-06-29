@@ -25,7 +25,7 @@ setup(
         'console_scripts': [
             'ground_truth_node = ground_truth.ground_truth_node:main',
             'wall_follower = ground_truth.wall_follower_node:main',
-            'learner_node = ground_truth.learner_node:main',
+            'collect_lidar_data = ground_truth.collect_lidar_data:main',
             'train = ground_truth.train:main',
             'inference = ground_truth.inference:main',
             'dagger_logger = ground_truth.dagger_logger:main',

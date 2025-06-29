@@ -6,6 +6,7 @@ import numpy as np
 import csv
 from sklearn.model_selection import train_test_split
 import os
+from .SimpleNet import SimpleNet
 
 # 1. Load CSV
 def load_data(csv_path):
@@ -29,26 +30,6 @@ class ExpertDataset(Dataset):
         return len(self.X)
     def __getitem__(self, idx):
         return self.X[idx], self.y[idx]
-
-# 3. Simple model
-class SimpleNet(nn.Module):
-    def __init__(self, input_dim, output_dim=2):
-        super().__init__()
-        self.net = nn.Sequential(
-            nn.Linear(input_dim, 128),
-            nn.ReLU(),
-            nn.Linear(128, 96),
-            nn.ReLU(),
-            nn.Linear(96, 64),
-            nn.ReLU(),
-            nn.Linear(64, 32),
-            nn.ReLU(),
-            nn.Linear(32, 16),
-            nn.ReLU(),
-            nn.Linear(16, output_dim)
-        )
-    def forward(self, x):
-        return self.net(x)
 
 def train_model(csv_path):
     X, y = load_data(csv_path)

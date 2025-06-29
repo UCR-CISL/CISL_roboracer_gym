@@ -7,9 +7,9 @@ import csv
 import os
 from datetime import datetime
 
-class DAggerLearner(Node):
+class collect_lidar_data(Node):
     def __init__(self):
-        super().__init__('dagger_learner')
+        super().__init__('collect_lidar_data')
 
         self.scan_sub = self.create_subscription(LaserScan, '/scan', self.scan_callback, 10)
         self.drive_sub = self.create_subscription(AckermannDriveStamped, '/drive', self.drive_callback, 10)
@@ -21,21 +21,18 @@ class DAggerLearner(Node):
         self.declare_parameter('save_path', 'dagger_dataset.csv')
         self.save_path = self.get_parameter('save_path').get_parameter_value().string_value
 
-        self.get_logger().info('DAgger learner initialized and recording.')
+        self.get_logger().info('recording data')
 
     def scan_callback(self, scan_msg):
         if self.expert_action is None:
             return  # No expert data yet
 
-        # Example: downsample and normalize laser scan
         ranges = np.array(scan_msg.ranges)
         ranges = np.nan_to_num(ranges, nan=0.0, posinf=0.0, neginf=0.0)
-        downsampled = ranges[::10]  # Reduce dimensionality
 
-        # Normalize input (assume max range is 10.0)
-        normalized_scan = np.clip(downsampled / 10.0, 0.0, 1.0)
+        # Removed Downsampling
 
-        input_features = normalized_scan.tolist()
+        input_features = ranges.tolist()
         label = [self.expert_action.drive.steering_angle, self.expert_action.drive.speed]
 
         self.data.append((input_features, label))
@@ -78,7 +75,7 @@ class DAggerLearner(Node):
 
 def main(args=None):
     rclpy.init(args=args)
-    node = DAggerLearner()
+    node = collect_lidar_data()
     try:
         rclpy.spin(node)
     except KeyboardInterrupt:
