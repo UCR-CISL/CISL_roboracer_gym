@@ -5,11 +5,12 @@ from ackermann_msgs.msg import AckermannDriveStamped
 import torch
 import torch.nn as nn
 import numpy as np
-from geometry_msgs.msg import Pose, Twist
+from geometry_msgs.msg import Pose, Twist, Quaternion
 from geometry_msgs.msg import PoseWithCovarianceStamped
-from tf_transformations import quaternion_from_euler
+from tf2_ros import Buffer, TransformListener
+import math
 import time
-
+from .SimpleNet import SimpleNet
 
 reset=False
 class DaggerInferenceNode(Node):
@@ -22,7 +23,7 @@ class DaggerInferenceNode(Node):
         output_dim = 2  # steering, speed
 
         self.model = SimpleNet(input_dim=input_dim, output_dim=output_dim)
-        model_path = "/sim_ws/src/ground_truth/models/dagger.pth"
+        model_path = "lidar_policy.pth"#"/sim_ws/src/ground_truth/models/dagger.pth"
         self.model.load_state_dict(torch.load(model_path, map_location=self.device))
         self.model.to(self.device)
         self.model.eval()
@@ -34,6 +35,9 @@ class DaggerInferenceNode(Node):
     
         # Publisher to drive commands
         self.drive_pub = self.create_publisher(AckermannDriveStamped, '/drive', 10)
+
+        # Publisher for resetting car position
+        self.reset_pub = self.create_publisher(PoseWithCovarianceStamped, '/initialpose', 10)
 
         self.get_logger().info("DAgger inference node started and model loaded.")
 
@@ -57,13 +61,6 @@ class DaggerInferenceNode(Node):
         pose_msg.pose.pose.position.x = self.start_position[0]
         pose_msg.pose.pose.position.y = self.start_position[1]
         pose_msg.pose.pose.position.z = 0.0
-        
-        # Set orientation (as quaternion from yaw)
-        # q = quaternion_from_euler(0, 0, self.start_position[2])
-        # pose_msg.pose.pose.orientation.x = q[0]
-        # pose_msg.pose.pose.orientation.y = q[1]
-        # pose_msg.pose.pose.orientation.z = q[2]
-        # pose_msg.pose.pose.orientation.w = q[3]
         
         # Publish the pose
         self.reset_pub.publish(pose_msg)
@@ -109,23 +106,22 @@ def main(args=None):
 if __name__ == '__main__':
     main()
 
-
-# Paste your SimpleNet class here exactly as in train.py
-class SimpleNet(nn.Module):
-    def __init__(self, input_dim, output_dim=2):
-        super().__init__()
-        self.net = nn.Sequential(
-            nn.Linear(input_dim, 128),
-            nn.ReLU(),
-            nn.Linear(128, 96),
-            nn.ReLU(),
-            nn.Linear(96, 64),
-            nn.ReLU(),
-            nn.Linear(64, 32),
-            nn.ReLU(),
-            nn.Linear(32, 16),
-            nn.ReLU(),
-            nn.Linear(16, output_dim)
-        )
-    def forward(self, x):
-        return self.net(x)
+# # Paste your SimpleNet class here exactly as in train.py
+# class SimpleNet(nn.Module):
+#     def __init__(self, input_dim, output_dim=2):
+#         super().__init__()
+#         self.net = nn.Sequential(
+#             nn.Linear(input_dim, 128),
+#             nn.ReLU(),
+#             nn.Linear(128, 96),
+#             nn.ReLU(),
+#             nn.Linear(96, 64),
+#             nn.ReLU(),
+#             nn.Linear(64, 32),
+#             nn.ReLU(),
+#             nn.Linear(32, 16),
+#             nn.ReLU(),
+#             nn.Linear(16, output_dim)
+#         )
+#     def forward(self, x):
+#         return self.net(x)

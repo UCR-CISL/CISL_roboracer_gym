@@ -2,18 +2,18 @@ from launch import LaunchDescription
 from launch_ros.actions import Node
 
 def generate_launch_description():
-    """Launch file for DAgger learner node"""
+    """Launch file for lidar collector node"""
     
     return LaunchDescription([
         Node(
             package='ground_truth',  # Change to your actual package name if different
-            executable='learner_node',
-            name='dagger_learner',
+            executable='collect_lidar_data',
+            name='lidar_collector',
             output='screen',
             parameters=[{
                 'save_path':'/sim_ws/src/ground_truth/raw_data' ,  # Change this path as needed
                 'max_samples': 5000,                             # Adjust as needed
-                'save_interval': 500                             # Adjust as needed
+                'save_interval': 5000                             # Adjust as needed
             }]
         )
     ])
